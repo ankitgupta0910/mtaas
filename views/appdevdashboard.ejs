@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="./js/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    
+        <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/dashboard.css" rel="stylesheet">
+    <link href="stylesheets/file1.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style>
+
+.has-error .help-block{
+	color:red;
+}
+
+.has-error .form-control{
+	border:1px solid red;
+}
+
+</style>
+  </head>
+
+  <body ng-app="mtaas" data-ng-controller="mtaas">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">{{first_name}} {{last_name}}</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" ng-click="ho_me()">Dashboard</a></li>
+            <!-- <li><a href="#">Settings</a></li> -->
+            <li><a href="#" ng-click="pro_file()">Profile</a></li>
+            <li><a href="#" ng-click="log_out()">Logout</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <!-- <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li> -->
+            <li><button type="button" class="list-group-item active" ng-click="ho_me()" style="margin:1px 0 0 0">Home</button></li>
+            <li><button type="button" class="list-group-item" ng-click="op_ts()" style="margin:3px 0 0 0">Create New Project</button></li>
+            <li><button type="button" class="list-group-item" ng-click="cr_pr()" style="margin:3px 0 0 0">Find a Tester</button></li>
+            <li><button type="button" class="list-group-item" ng-click="nw_pr()" style="margin:3px 0 0 0">Running Project<span class="badge">{{offer}}</span></button></li>
+            <li><button type="button" class="list-group-item" ng-click="bl_rw()" style="margin:3px 0 0 0">Project Billing</button></li>
+            <li><button type="button" class="list-group-item" ng-click="bl_rw()" style="margin:3px 0 0 0">Rank Tester</button></li>
+          </ul>          
+<!--           <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul> -->
+<!--           <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul> -->
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="home1">
+          <h1 class="page-header">On Going Projects : {{rating}}</h1>
+
+<!--           <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div> -->
+
+          <h2 class="sub-header">Section title</h2>
+          <div class="table-responsive">
+<!--             <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+                <tr>
+                  <td>1,005</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                </tr>
+                <tr>
+                  <td>1,006</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                </tr>
+                <tr>
+                  <td>1,007</td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>Praesent</td>
+                  <td>mauris</td>
+                </tr>
+                <tr>
+                  <td>1,008</td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td>sed</td>
+                </tr>
+                <tr>
+                  <td>1,009</td>
+                  <td>augue</td>
+                  <td>semper</td>
+                  <td>porta</td>
+                  <td>Mauris</td>
+                </tr>
+                <tr>
+                  <td>1,010</td>
+                  <td>massa</td>
+                  <td>Vestibulum</td>
+                  <td>lacinia</td>
+                  <td>arcu</td>
+                </tr>
+                <tr>
+                  <td>1,011</td>
+                  <td>eget</td>
+                  <td>nulla</td>
+                  <td>Class</td>
+                  <td>aptent</td>
+                </tr>
+                <tr>
+                  <td>1,012</td>
+                  <td>taciti</td>
+                  <td>sociosqu</td>
+                  <td>ad</td>
+                  <td>litora</td>
+                </tr>
+                <tr>
+                  <td>1,013</td>
+                  <td>torquent</td>
+                  <td>per</td>
+                  <td>conubia</td>
+                  <td>nostra</td>
+                </tr>
+                <tr>
+                  <td>1,014</td>
+                  <td>per</td>
+                  <td>inceptos</td>
+                  <td>himenaeos</td>
+                  <td>Curabitur</td>
+                </tr>
+                <tr>
+                  <td>1,015</td>
+                  <td>sodales</td>
+                  <td>ligula</td>
+                  <td>in</td>
+                  <td>libero</td>
+                </tr>
+              </tbody>
+            </table> -->
+          </div>
+        </div>
+        
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="opts">
+          <h1 class="page-header">Rating : {{rating}}.0</h1>
+          optional test
+		</div>     
+		
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="crpr">
+          <h1 class="page-header">Rating : {{rating}}.0</h1>
+          <h2 class="sub-header" ng-show="offer === 0 && cr_pro_duration === 0">You have no current project and new offer as of now. Please wait.</h2>
+          <!-- <div class="row" style="padding:5px 5px 5px 5px;border: solid #337AB7  1px;"> -->
+			<h2 class="text-center">{{cr_pro_name}}</h2> 
+			<div class="row" style="margin:5px 0 0 0;">
+			<div class="row" style="border: solid #337AB7  1px;padding:5px 5px 5px 5px;">
+			<table class="table">
+			<tr><td>{{cr_pro_desc}}</td></tr>
+			<tr><td><label>Duration: </label> {{cr_pro_duration}} weeks</td></tr>
+			<tr><td><label>Testing Type: </label> {{cr_pro_test_type}}</td></tr>
+			<tr><td><label>App Location: </label> {{cr_pro_pro_loc}}</td></tr>
+			<tr><td><label>Report Location: </label> {{cr_pro_rep_loc}}</td></tr>
+			</table>
+			</div>
+			</div>
+			
+			<div class="row" style="margin:5px 0 0 0;">
+			<div class="row" style="border: solid #337AB7  1px;">
+			<div class="row h1 text-center">Past Bugs</div>
+			<table class="table table-hover table-striped">
+			<tr>
+			<td>Date</td>
+			<td>No.of Bugs</td>
+			<td>Bug Description</td>
+			</tr>
+			<tr ng-repeat="id in details">
+			<td>{{id.date.substr(0,10)}}</td>
+			<td>{{id.numofbugs}}</td>
+			<td>{{id.bugdescription}}</td>
+			</tr>
+			</table>
+			<div class="row h1 text-center">New Bugs</div>
+			<form name="bugForm" class="form-horizontal" style="margin:0 0 0 20px" novalidate>{{bugForm.$valid}}
+			<div class="form-group" ng-class="{'has-error': (bugForm.submitted || bugForm.bugs_no.$touched || bugForm.bugs_no.$dirty) && bugForm.bugs_no.$invalid,
+										'has-success': (bugForm.bugs_no.$touched || bugForm.bugs_no.$dirty) && bugForm.bugs_no.$valid }">
+			<label>No. Of Bugs: </label><br><input type="text" name="bugs_no" ng-model="bug.bugs_no" class="form-control" style="width:20%" ng-pattern="/^[0-9]{1,2}$/" required>
+			<span class=" help-block glyphicon glyphicon-exclamation-sign" ng-show="(bugForm.submitted || bugForm.bugs_no.$touched || bugForm.bugs_no.$dirty) && bugForm.bugs_no.$error.required">Description Required</span>
+			<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="bugForm.bugs_no.$error.pattern">Pattern is wrong.</span>
+			</div>
+					
+			<div class="form-group" ng-class="{'has-error': (bugForm.submitted || bugForm.bugs_desc.$touched || bugForm.bugs_desc.$dirty) && bugForm.bugs_desc.$invalid,
+										'has-success': (bugForm.bugs_desc.$touched || bugForm.bugs_desc.$dirty) && bugForm.bugs_desc.$valid }">
+			<label>Bug Description: </label><br><textarea  name="bugs_desc" ng-model="bug.bugs_desc" class="form-control" ng-maxlength="100" style="width:20%" required></textarea>
+			<span class=" help-block glyphicon glyphicon-exclamation-sign" ng-show="(bugForm.submitted || bugForm.bugs_desc.$touched || bugForm.bugs_desc.$dirty) && bugForm.bugs_desc.$error.required">Description Required</span>
+			<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="bugForm.bugs_desc.$error.maxlength">Description should not be greater than 100 characters.</span>
+			</div>
+			
+			<div class="form-group">
+			<button type="button" class="btn btn-default btn-primary " ng-click="rep_bug()" ng-disabled="bugForm.$invalid">Submit</button>
+			<!-- <input type="file"><br> -->
+			</div>
+			</form>
+			</div>
+			</div>
+		</div>     
+	
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="nwpr">
+          	<h1 class="page-header">Rating : {{rating}}.0</h1>
+          
+        	<div class="row" style="padding:5px 5px 5px 5px;border: solid #337AB7  1px;">
+			<label>Project Name:</label> {{nw_pro_name}}
+			</div>
+			
+			<div class="row" style="margin:5px 0 0 0;">
+			<div class="row" style="border: solid #337AB7  1px;padding:5px 5px 5px 5px;">
+			<label>Project Description:</label>{{nw_pro_desc}}
+			</div>
+			</div>
+			
+			<div class="row" style="margin:5px 0 0 0;">
+			<div class="row" style="border: solid #337AB7  1px;">
+			<table class="table">
+			<tr>
+			<td><label>Duration: </label> {{nw_pro_duration}} weeks</td>
+			<td><label>Testing Type: </label> {{nw_pro_test_type}}</td>	
+		</tr>
+			</table>
+			</div>
+			</div>
+			
+			<div class="row" style="margin:5px 0 0 0;">
+			<div class="row" style="border: solid #337AB7  1px;">
+			<div class="row h1 text-center">Offer</div>
+			<table class="table">
+			<tr>
+			<td><button type="button" class="btn btn-default btn-success btn-lg btn-block" ng-click="nwpr_acc()">Accept</button></td>
+			<td><button type="button" class="btn btn-default btn-danger btn-success btn-lg btn-block" ng-click="nwpr_rej()">Reject</button></td>
+			</tr>
+			</table>
+			</div>
+			</div>
+			</div>
+
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="blrw">
+          <h1 class="page-header">Rating : {{rating}}.0</h1>
+          billing
+		</div>     
+		
+		<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" ng-show="prof">
+          <h1 class="page-header">Rating : {{rating}}.0</h1>
+          <div class="table-responsive">
+            <table class="table">
+            <tr><td><label>Email: </label><span  class="pull-right"> {{profile_email}}</span></td></tr>
+            <tr><td><label>First Name: </label><span  class="pull-right"> {{profile_fname}}</span> </td></tr>
+            <tr><td><label>Middle Name: </label><span  class="pull-right"> {{profile_mname}}</span></td></tr>
+            <tr><td><label>Last Name: </label><span  class="pull-right"> {{profile_lname}}</span></td></tr>
+            <tr><td><label>Date of Birth: </label><span  class="pull-right"> {{profile_dob}}</span></td></tr>
+            <tr><td><label>Gender: </label><span  class="pull-right"> {{profile_gender}}</span></td></tr>
+            <tr><td><label>Address Line 1: </label><span  class="pull-right"> {{profile_adln1}}</span></td></tr>
+            <tr ng-hide="profile_adln2 === 'null' || profile_adln2 === 'undefined'"><td><label>Address Line 2: </label><span  class="pull-right"> {{profile_adln2}}</span></td></tr>
+            <tr><td><label>City: </label><span  class="pull-right"> {{profile_city}}</span></td></tr>
+            <tr><td><label>State: </label><span  class="pull-right"> {{profile_state}}</span></td></tr>
+            <tr><td><label>Country: </label><span  class="pull-right"> {{profile_country}}</span></td></tr>
+            <tr><td><label>Contact: </label><span  class="pull-right"> {{profile_contact}}</span></td></tr>
+            <tr><td><label>Skype: </label><span  class="pull-right"> {{profile_skype}}</span></td></tr>
+            <tr ng-hide="profile_pl1 === 'null'"><td><label>Testing Platform: </label><span  class="pull-right"><span  class="pull-right"> {{profile_pl1}}</span></td></tr>
+            <tr ng-hide="profile_pl2 === 'null'"><td><label>Testing Platform: </label><span  class="pull-right"> {{profile_pl2}}</span></td></tr>
+            <tr ng-hide="profile_pl3 === 'null'"><td><label>Testing Platform: </label><span  class="pull-right"> {{profile_pl3}}</span></td></tr>
+            <tr ng-hide="profile_ty1 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty1}}</span></td></tr>
+            <tr ng-hide="profile_ty2 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty2}}</span></td></tr>
+            <tr ng-hide="profile_ty3 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty3}}</span></td></tr>
+            <tr ng-hide="profile_ty4 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty4}}</span></td></tr>
+            <tr ng-hide="profile_ty5 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty5}}</span></td></tr>
+          	</table>
+          </div>
+		</div>   
+		
+		</div>     
+		
+<!-- <div class="row" style="position: absolute;height: 20px;margin-bottom: 0;bottom: 0;width: 100%;">
+		<footer class="">
+    <nav>
+        <div class="container fivecolumns">
+            <div class="row">
+                    <div class="col-xs-2">
+                        <ul>
+                            <li>I want</li>
+                            <li><a href="/en/functional-testing">Functional testing</a></li>
+                            <li><a href="/en/usability-testing">Usability testing</a></li>
+                            <li><a href="/en/localization-testing">Localization testing</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-2">
+                        <ul>
+                            <li>For a</li>
+                            <li><a href="/en/website-testing">Website</a></li>
+                            <li><a href="/en/ios-testing">iOS Application</a></li>
+                            <li><a href="/en/android-testing">Android Application</a></li>
+                            <li><a href="/en/software-quality-assurance">Mac or PC software</a></li>
+                            <li><a href="/en/game-testing">Video game</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-2">
+                        <ul>
+                            <li>How to start</li>
+                            <li><a href="/en/software-testing-services">What you get</a></li>
+                            <li><a href="/en/software-testing-process">How it works</a></li>
+                            <li><a href="/en/software-testing-cost">Pricing</a></li>
+                            <li><a href="/en/client-registration">Sign up</a></li>
+                            <li><a href="/en/software-testing-questions">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-2">
+                        <ul>
+                            <li>About us</li>
+                            <li><a href="/en/crowdsourcing-platform">Story</a></li>
+                            <li><a href="/en/crowdsourced-software-testing-management">Management</a></li>
+                            <li><a href="/en/contact-crowdsourced-testing">Contact us</a></li>
+                            <li><a href="https://crowdsourcedtesting.com/resources/" target="_blank">Resources</a></li>
+                            <li><a href="https://leantesting.com/" target="_blank">Free bug tracker</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-2">
+                        <ul>
+                            <li>The community</li>
+                            <li><a target="_blank" href="https://www.facebook.com/CrowdsourcedTesting">Facebook</a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/crowdsourced-testing-co-">LinkedIn</a></li>
+                            <li><a target="_blank" href="https://twitter.com/crowdsourcingqa">Twitter</a></li>
+                            <li><a target="_blank" href="https://plus.google.com/+Crowdsourcedtesting" rel="publisher">Google+</a></li>
+                            <li><a target="_blank" href="https://www.pinterest.com/crowdsourced/">Pinterest</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </nav>
+    <div class="bg">
+        <div class="container">
+            <p>Crowdsourced Testing SpA © All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</div>	 -->
+
+      </div>
+  </body>
+  <script type="text/javascript">
+
+var app = angular.module('mtaas', []);
+
+app.controller('mtaas', ['$scope','$http','$window',function ($scope,$http,$window)  {
+	
+	$scope.home1 = true;
+	$scope.opts = false;
+	$scope.crpr = false;
+	$scope.nwpr = false;
+	$scope.blrw = false;
+	
+	
+	$http({
+	  		method: 'GET',
+	 		url: '/checkLogin'
+	 }).
+then(function(response)
+	{
+	  	if (response.data.status == 200)
+	  		{
+	  			$scope.first_name=response.data.fname;
+	  			$scope.last_name=response.data.lname;
+				$scope.emailid=response.data.mail;
+				$scope.rating = response.data.rating;
+				$scope.offer = response.data.offer;
+			}
+	  	
+	 });
+	
+	$scope.ustp = function()
+	{
+
+alert("ankit");
+	}
+	
+	$scope.ho_me = function (){
+		$scope.home1 = true;
+		$scope.opts = false;
+		$scope.crpr = false;
+		$scope.nwpr = false;
+		$scope.blrw = false;
+		$scope.prof = false;
+		
+	}
+	
+	$scope.op_ts = function (){
+		$scope.opts = true;
+		$scope.crpr = false;
+		$scope.nwpr = false;
+		$scope.blrw = false;
+		$scope.home1 = false;
+		$scope.prof = false;
+	}
+	
+	$scope.cr_pr = function (){
+		//alert("jhsdfkjshFDKJHS");
+		$http({
+			method: 'POST',
+			url: '/curpro',
+			data: {"email":$scope.emailid}
+		}).
+			then(function(response){
+				//alert("After fetching desc");
+				$scope.opts = false;
+				$scope.crpr = true;
+				$scope.nwpr = false;
+				$scope.blrw = false;
+				$scope.home1 = false;
+				$scope.prof = false;
+				
+				$scope.cr_pro_id = response.data.results[0]["project_id"];
+				$scope.cr_pro_desc = response.data.results[0]["description"];
+				$scope.cr_pro_duration =response.data.results[0]["Project_duration"];
+				$scope.cr_pro_name =response.data.results[0]["app_name"];
+				$scope.cr_pro_test_type = response.data.results[0]["project_testing_type"];
+				$scope.cr_pro_pro_loc = response.data.results[0]["project_access_area"];
+				$scope.cr_pro_rep_loc = response.data.results[0]["report_access_area"];
+				$scope.details = response.data.results1;
+				//alert($scope.appdesc1);
+				
+			});
+	}
+	
+	$scope.nw_pr = function (){
+		$scope.opts = false;
+		$scope.crpr = false;
+		$scope.nwpr = true;
+		$scope.blrw = false;
+		$scope.home1 = false;
+		$scope.prof = false;
+		$http({
+  	  		method: 'POST',
+  	 		url: '/newpro',
+  	 		data: {"email":$scope.emailid}
+    	 }).
+    	then(function(response)
+    	{
+//    		alert(response.data.results);
+//    		alert(response.data.results[0]["project_id"]);
+    		$scope.nw_pro_name = response.data.results[0]["app_name"];
+    		$scope.nw_pro_desc = response.data.results[0]["description"];
+    		$scope.nw_pro_duration = response.data.results[0]["project_duration"];
+    		$scope.nw_pro_test_type = response.data.results[0]["project_testing_type"];
+			$scope.nw_pro_pid = response.data.results[0]["project_id"];
+    	})
+	
+	}
+	
+	$scope.bl_rw = function (){
+		$scope.opts = false;
+		$scope.crpr = false;
+		$scope.nwpr = false;
+		$scope.blrw = true;
+		$scope.home1 = false;
+		$scope.prof = false;
+	}
+	
+	$scope.nwpr_acc = function (){
+		
+//		alert("ankit");
+		$http({
+	  	  		method: 'POST',
+	  	 		url: '/nwpr_dec',
+	  	 		data: {"dec":"A","email":$scope.emailid,"pid":$scope.nw_pro_pid,"fname":$scope.first_name,"lname":$scope.last_name}
+	    	 }).
+	    	then(function(response)
+	    	{
+	    		$window.location.href = '/tr_dashboard';
+	    	})
+
+	}
+	
+	$scope.nwpr_rej = function (){
+//	alert("ankit");
+	$http({
+			method: 'POST',
+			url: '/nwpr_dec',
+			data: {"dec":"R","email":$scope.emailid,"pid":$scope.nw_pro_pid}
+	 }).
+	then(function(response)
+	{
+		$window.location.href = '/tr_dashboard';
+	})
+	
+	}
+	
+	$scope.pro_file = function (){
+		
+/* 		alert("ankit"); */
+		$http({
+				method: 'POST',
+				url: '/profil',
+				data: {"email":$scope.emailid}
+		 }).
+		then(function(response)
+		{
+			$scope.profile_email = response.data.results[0]["email"];
+			$scope.profile_fname = response.data.results[0]["first_name"];
+			$scope.profile_mname = response.data.results[0]["middle_name"];
+			$scope.profile_lname = response.data.results[0]["last_name"];
+			$scope.profile_dob = response.data.results[0]["dob"].substr(0,10);
+			if (response.data.results[0]["sex"] === 'm')
+				{
+				$scope.profile_gender = "Male";	
+				}
+			else
+				{
+				$scope.profile_gender = "Female";
+				}
+			$scope.profile_adln1 = response.data.results[0]["address_line1"];
+			$scope.profile_adln2 = response.data.results[0]["address_line2"];
+			$scope.profile_city = response.data.results[0]["city"];
+			$scope.profile_state = response.data.results[0]["state"];
+			$scope.profile_country = response.data.results[0]["country"];
+			$scope.profile_contact = response.data.results[0]["phone_no"];
+			$scope.profile_skype = response.data.results[0]["skype_id"];
+			$scope.profile_pl1 = response.data.results[0]["platform_android"];
+			$scope.profile_pl2 = response.data.results[0]["platform_ios"];
+			$scope.profile_pl3 = response.data.results[0]["platform_windows"];
+			$scope.profile_ty1 = response.data.results[0]["testing_ty_functional"];
+			$scope.profile_ty2 = response.data.results[0]["testing_ty_laboratory"];
+			$scope.profile_ty3 = response.data.results[0]["testing_ty_performance"];
+			$scope.profile_ty4 = response.data.results[0]["testing_ty_memorylk"];
+			$scope.profile_ty5 = response.data.results[0]["testing_ty_interrupt"];
+			$scope.opts = false;
+			$scope.crpr = false;
+			$scope.nwpr = false;
+			$scope.blrw = false;
+			$scope.home1 = false;
+			$scope.prof = true;
+		})
+		
+	}
+	
+	
+	$scope.log_out = function (){
+		$http({
+	  	  		method: 'POST',
+	  	 		url: '/logout',
+	    	 }).
+	    	then(function(response)
+	    	{
+	    		$window.location.href = '/';
+	    	})
+	}
+	
+	$scope.rep_bug = function (){
+		alert("bnm,Sc,mbn,m");
+		$http({
+	  	  		method: 'POST',
+	  	 		url: '/repbug',
+	  	 		data: {"email":$scope.emailid,"pid":$scope.cr_pro_id,"bug":$scope.bug}
+	    	 }).
+	    	then(function(response)
+	    	{
+	    		$window.location.href = '/tr_dashboard';
+	    	})
+	}
+}]);
+
+</script>
+</html>
