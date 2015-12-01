@@ -22,7 +22,7 @@ exports.test = function(req, res){
 	
 exports.newpro = function(req, res){
 	var email = req.param("email");
-		var myquery = "select ap.project_id,ap.app_name,ap.description,ap.project_testing_type,ap.project_duration from app_project_setup ap,tester_selection_temp sl where ap.project_id=sl.project_id and sl.tr_email = '"+email+"'";
+		var myquery = "select ap.project_id,ap.app_name,ap.description,ap.project_testing_type,ap.project_duration from app_project_setup ap,tester_selection_temp sl where tr_status = 'P' and ap.project_id=sl.project_id and sl.tr_email = '"+email+"'";
 		mysql.fetchData(function(err,results){
 			if(err)
 				{
@@ -59,7 +59,7 @@ exports.nwpr_dec = function(req, res){
 		},myquery);
 if(dec === "A")
 	{
-		var myquery1 = "insert into app_workflow (project_id,tr_email,fname,lname) values ("+pid+",'"+email+"','"+fname+"','"+lname+"')";
+		var myquery1 = "insert into app_workflow (project_id,tr_email,first_name,last_name) values ("+pid+",'"+email+"','"+fname+"','"+lname+"')";
 		mysql.fetchData(function(err,results){
 			if(err)
 				{
@@ -126,6 +126,24 @@ res.send({"status":200});
 		var tremail = req.param("email");
 		
 		myquery = 	"select * from users u, testers_data t where u.email = t.email_id and t.email_id = '"+tremail+"'";	
+		mysql.fetchData(function(err,results){
+				if(err)
+					{
+						throw err;
+					}
+				else
+					{
+						console.log(results);
+						res.send({"results":results});
+					}
+			},myquery);
+}
+
+	exports.bilpay = function(req, res){
+		//console.log("nfkjanfkjans");
+		var tremail = req.param("email");
+		
+		myquery = 	"select wf.pay,ap.app_name from app_workflow wf,app_project_setup ap where wf.project_id = ap.project_id and tr_email = '"+tremail+"'";	
 		mysql.fetchData(function(err,results){
 				if(err)
 					{

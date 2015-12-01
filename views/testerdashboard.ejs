@@ -31,7 +31,7 @@
 	
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Dashboard</title>
+    <title>Mtaas - Tester Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
@@ -72,6 +72,16 @@
             <!-- <li><a href="#">Settings</a></li> -->
             <li><a href="#" ng-click="pro_file()">Profile</a></li>
             <li><a href="#" ng-click="log_out()">Logout</a></li>
+<!--             <li class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li><a href="#">Separated link</a></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+        	</li> -->
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -80,14 +90,14 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="wrapper">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <!-- <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li> -->
             <li><button type="button" class="list-group-item active" ng-click="ho_me()" style="margin:1px 0 0 0">Home</button></li>
             <li><button type="button" class="list-group-item" ng-click="op_ts()" style="margin:3px 0 0 0" ng-disabled="rating > 0">Optional Test</button></li>
-            <li><button type="button" class="list-group-item" ng-click="cr_pr()" style="margin:3px 0 0 0">Current Project</button></li>
+            <li><button type="button" class="list-group-item" ng-click="cr_pr()" style="margin:3px 0 0 0" ng-disabled= "status1 === 'AV'">Current Project</button></li>
             <li><button type="button" class="list-group-item" ng-click="nw_pr()" style="margin:3px 0 0 0" ng-disabled="offer === 0">New Projects<span class="badge">{{offer}}</span></button></li>
             <li><button type="button" class="list-group-item" ng-click="bl_rw()" style="margin:3px 0 0 0">Billng & Rewards</button></li>
           </ul>          
@@ -130,133 +140,8 @@
             </div>
           </div> -->
 
-          <h2 class="sub-header">Section title</h2>
+<!--           <h2 class="sub-header">Section title</h2> -->
           <div class="table-responsive">
-<!--             <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table> -->
           </div>
         </div>
         
@@ -449,7 +334,7 @@
 			
 		</div>     
 		
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="crpr">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="crpr" style="padding:70px">
           <h1 class="page-header">Rating : {{rating}}.0</h1>
           <h2 class="sub-header" ng-show="offer === 0 && cr_pro_duration === 0">You have no current project and new offer as of now. Please wait.</h2>
           <!-- <div class="row" style="padding:5px 5px 5px 5px;border: solid #337AB7  1px;"> -->
@@ -525,7 +410,7 @@
 			<tr>
 			<td><label>Duration: </label> {{nw_pro_duration}} weeks</td>
 			<td><label>Testing Type: </label> {{nw_pro_test_type}}</td>	
-		</tr>
+			</tr>
 			</table>
 			</div>
 			</div>
@@ -543,9 +428,20 @@
 			</div>
 			</div>
 
-		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="blrw">
+		<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" ng-show="blrw">
           <h1 class="page-header">Rating : {{rating}}.0</h1>
-          billing
+            <div class="table-responsive">
+            <table class="table">
+            <tr>
+            	<td><label>Project Name</label></td>
+            	<td><label><span  class="pull-right">Pay</span></label></td>
+            </tr>
+            <tr ng-repeat="id in paydet">
+            	<td>{{id.app_name}}</td>
+            	<td><span  class="pull-right">{{id.pay}}</span></td>
+            </tr>
+          	</table>
+          </div>
 		</div>     
 		
 		<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" ng-show="prof">
@@ -577,9 +473,7 @@
           </div>
 		</div>   
 		
-		</div>     
-      </div>
-    <!--  <div class="row" style="position:absolute;height:20px;bottom:0;width: 100%;">
+<!-- 		<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" style="position:absolute;height:20px;bottom:0;width: 100%;">
       		<footer class="" style="bottom:0">
     <nav>
         <div class="container fivecolumns">
@@ -640,9 +534,18 @@
             <p>Crowdsourced Testing SpA © All rights reserved.</p>
         </div>
     </div>
-</footer>
+</footer> 
 
-</div> -->
+</div>-->
+<!-- <nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <p>Crowdsourced Testing SpA © All rights reserved.</p>
+  </div>
+</nav> -->
+
+		</div>     
+      </div>
+   
   </body>
   <script type="text/javascript">
 
@@ -663,13 +566,18 @@ app.controller('mtaas', ['$scope','$http','$window',function ($scope,$http,$wind
 	 }).
 then(function(response)
 	{
+//		alert(response.data.status);
 	  	if (response.data.status == 200)
 	  		{
+	  		
+	//  			alert("ankit");
 	  			$scope.first_name=response.data.fname;
+	 // 			alert($scope.first_name);
 	  			$scope.last_name=response.data.lname;
 				$scope.emailid=response.data.mail;
 				$scope.rating = response.data.rating;
 				$scope.offer = response.data.offer;
+				$scope.status1 = response.data.status1;
 			}
 	  	
 	 });
@@ -708,23 +616,23 @@ alert("ankit");
 		}).
 			then(function(response){
 				//alert("After fetching desc");
-				$scope.opts = false;
-				$scope.crpr = true;
-				$scope.nwpr = false;
-				$scope.blrw = false;
-				$scope.home1 = false;
-				$scope.prof = false;
-				
-				$scope.cr_pro_id = response.data.results[0]["project_id"];
-				$scope.cr_pro_desc = response.data.results[0]["description"];
-				$scope.cr_pro_duration =response.data.results[0]["Project_duration"];
-				$scope.cr_pro_name =response.data.results[0]["app_name"];
-				$scope.cr_pro_test_type = response.data.results[0]["project_testing_type"];
-				$scope.cr_pro_pro_loc = response.data.results[0]["project_access_area"];
-				$scope.cr_pro_rep_loc = response.data.results[0]["report_access_area"];
-				$scope.details = response.data.results1;
-				//alert($scope.appdesc1);
-				
+
+						$scope.opts = false;
+						$scope.crpr = true;
+						$scope.nwpr = false;
+						$scope.blrw = false;
+						$scope.home1 = false;
+						$scope.prof = false;
+						
+						$scope.cr_pro_id = response.data.results[0]["project_id"];
+						$scope.cr_pro_desc = response.data.results[0]["description"];
+						$scope.cr_pro_duration =response.data.results[0]["Project_duration"];
+						$scope.cr_pro_name =response.data.results[0]["app_name"];
+						$scope.cr_pro_test_type = response.data.results[0]["project_testing_type"];
+						$scope.cr_pro_pro_loc = response.data.results[0]["project_access_area"];
+						$scope.cr_pro_rep_loc = response.data.results[0]["report_access_area"];
+						$scope.details = response.data.results1;
+						//alert($scope.appdesc1);
 			});
 	}
 	
@@ -760,6 +668,15 @@ alert("ankit");
 		$scope.blrw = true;
 		$scope.home1 = false;
 		$scope.prof = false;
+		$http({
+  	  		method: 'POST',
+  	 		url: '/bilpay',
+  	 		data: {"email":$scope.emailid}
+    	 }).
+    	then(function(response)
+    	{
+    		$scope.paydet = response.data.results;
+    	})
 	}
 	
 	$scope.nwpr_acc = function (){
@@ -896,7 +813,7 @@ alert("ankit");
 		if($scope.q0 === "3"){
 			score = score + 1;
 		}				
-		alert(score);
+//		alert(score);
 		
 		$http({
   	  		method: 'POST',

@@ -48,10 +48,13 @@ app.post('/nwpr_dec',tester.nwpr_dec);
 app.post('/curpro', tester.curpro);
 app.post('/profil', tester.profil);
 app.post('/repbug',tester.repbug);
+app.post('/bilpay',tester.bilpay);
 app.post('/newProject',appdeveloper.newProject);//neelam
 app.post('/findTester',appdeveloper.findTester);//neelam
 app.post('/acceptTester',appdeveloper.acceptTester);//neelam
-
+app.post('/billing',appdeveloper.billing); //dvora
+app.post('/billingClosure',appdeveloper.billingClosure); 
+app.post('/runningProjects',appdeveloper.runningProjects); 
 
 
 

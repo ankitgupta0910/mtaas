@@ -21,8 +21,9 @@ exports.checkLogin = function(req,res){
 					{
 					console.log("fetching rating");
 					req.session.rating=results[0].rating;
-
-					var myquery1 = "select * from  tester_selection_temp where tr_email = '"+req.session.mail+"' and tr_status = 'p' and ap_status = 's'";
+					req.session.status1=results[0].status;
+					console.log("aaaaaaaaaaaaaaaaaaaa");
+					var myquery1 = "select * from  tester_selection_temp where tr_email = '"+req.session.mail+"' and tr_status = 'P' and ap_status = 'Y'";
 					mysql.fetchData(function(err,results1){
 						if(err)
 							{
@@ -32,13 +33,23 @@ exports.checkLogin = function(req,res){
 							{
 							if (results1.length>0)
 								{
+								console.log("bbbbbbbbbbbbbbbbb");
 								req.session.offer=results1.length;
-								res.send({"status":200,"fname":req.session.fname,"lname":req.session.lname,"type":req.session.type,"mail":req.session.mail,"rating":req.session.rating,"offer":req.session.offer});
+								res.send({"status":200,"fname":req.session.fname,"lname":req.session.lname,"type":req.session.type,"mail":req.session.mail,"rating":req.session.rating,"offer":req.session.offer,"status1":req.session.status1});
 								}
 							else
 								{
+								console.log("cccccccccccccccccccc");
+								console.log(req.session.fname);
+								console.log(req.session.lname);
+								console.log(req.session.type);
+								console.log(req.session.mail);
+								console.log(req.session.rating);
+								console.log(req.session.offer);
+								console.log(req.session.status1);
+								
 									req.session.offer=0;	
-									res.send({"status":200,"fname":req.session.fname,"lname":req.session.lname,"type":req.session.type,"mail":req.session.mail,"rating":req.session.rating,"offer":req.session.offer});
+									res.send({"status":200,"fname":req.session.fname,"lname":req.session.lname,"type":req.session.type,"mail":req.session.mail,"rating":req.session.rating,"offer":req.session.offer,"status1":req.session.status1});
 								}				
 							}
 					},myquery1);	

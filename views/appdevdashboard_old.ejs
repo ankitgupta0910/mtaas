@@ -784,8 +784,8 @@ padding: 0 0 0 0;
 		  	 		
 		      }).then(function(response)  
 		        {
-		    	
-			    	if (response.data.status == 200)
+		    	//alert(response.data.status);
+			    	if (response.data.status === 200)
 		    	  		{	
 					    	alert(response.data.detail[0]);
 						    
@@ -799,7 +799,31 @@ padding: 0 0 0 0;
 							$scope.details=response.data.detail;
         	  		      
         	  		    
-        	  		     }  	           	  		    
+        	  		     }  
+        	  		     
+        	  		     if(response.data.status ===	500)
+        	  		      {
+        	  		       alert("Not enough testers in system at this point of time , Please try again");
+        	  		        $scope.home = true;
+							$scope.nwpr = false;
+							$scope.fntr = false;
+							$scope.actr = false; 
+							$scope.rupr = false;	
+							$scope.blpr = false;
+        	  		      
+        	  		      }
+        	  		      if(response.data.status===100)
+        	  		      {
+        	  		        alert("Testers already assigned , can't assign more testers for this application");
+        	  		        $scope.home = true;
+							$scope.nwpr = false;
+							$scope.fntr = false;
+							$scope.actr = false; 
+							$scope.rupr = false;	
+							$scope.blpr = false;
+        	  		      
+        	  		      }
+        	  		                 	  		    
 	            });
 	}
 	
@@ -832,15 +856,13 @@ padding: 0 0 0 0;
 		  	 		
 		      }).then(function(response)  
 		        {
-		    	
 			    	if (response.data.status == 200)
 		    	  		{	
-					    	alert(response.data.detail[0]);
 						    
-						    $scope.home = false;
+						    $scope.home = true;
 							$scope.nwpr = false;
 							$scope.fntr = false;
-							$scope.actr = true; 
+							$scope.actr = false; 
 							$scope.rupr = false;	
 							$scope.blpr = false;	
 							

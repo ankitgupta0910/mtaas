@@ -50,13 +50,24 @@
 	border:1px solid red;
 }
 
+.rowmain{
+
+background: url("./images/cloud.jpg");
+
+width:1;
+height:1300px;
+top:53px;
+left:250px;
+
+}
+
 </style>
   </head>
 
   <body ng-app="mtaas" data-ng-controller="mtaas">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
+      <div class="container-fluid" >
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -68,9 +79,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" ng-click="ho_me()">Dashboard</a></li>
+            <li><a href="#" ng-click="homePage()">Dashboard</a></li>
             <!-- <li><a href="#">Settings</a></li> -->
-            <li><a href="#" ng-click="pro_file()">Profile</a></li>
+          <!--  <li><a href="#" ng-click="pro_file()">Profile</a></li>-->
             <li><a href="#" ng-click="log_out()">Logout</a></li>
           </ul>
           <form class="navbar-form navbar-right">
@@ -82,397 +93,243 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <div class="col-sm-2 col-md-2 sidebar" style="background: url(./images/cloud.jpg);">
           <ul class="nav nav-sidebar">
             <!-- <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li> -->
-            <li><button type="button" class="list-group-item active" ng-click="ho_me()" style="margin:1px 0 0 0">Home</button></li>
-            <li><button type="button" class="list-group-item" ng-click="op_ts()" style="margin:3px 0 0 0">Create New Project</button></li>
-            <li><button type="button" class="list-group-item" ng-click="cr_pr()" style="margin:3px 0 0 0">Find a Tester</button></li>
-            <li><button type="button" class="list-group-item" ng-click="nw_pr()" style="margin:3px 0 0 0">Running Project<span class="badge">{{offer}}</span></button></li>
-            <li><button type="button" class="list-group-item" ng-click="bl_rw()" style="margin:3px 0 0 0">Project Billing</button></li>
-            <li><button type="button" class="list-group-item" ng-click="bl_rw()" style="margin:3px 0 0 0">Rank Tester</button></li>
-          </ul>          
-<!--           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul> -->
-<!--           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul> -->
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="home1">
-          <h1 class="page-header">On Going Projects : {{rating}}</h1>
-
-<!--           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div> -->
-
-          <h2 class="sub-header">Section title</h2>
-          <div class="table-responsive">
-<!--             <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table> -->
-          </div>
-        </div>
+            <li><button type="button" class="list-group-item active" ng-click="homePage()" style="margin:1px 0 0 0">Home</button></li>
+            <li><button type="button" class="list-group-item" ng-click="nwprPage()" style="margin:3px 0 0 0;">Create New Project</button></li>
+            <li><button type="button" class="list-group-item" ng-click="fntrPage()" style="margin:3px 0 0 0;">Find a Tester</button></li>
+            <li><button type="button" class="list-group-item" ng-click="runningProject()" style="margin:3px 0 0 0;">All Projects</button></li>
+            <li><button type="button" class="list-group-item" ng-click="blprPage()" style="margin:3px 0 0 0;">Project Billing</button></li>
+          </ul>   
+        </div>         
         
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="opts">
-          <h1 class="page-header">Rating : {{rating}}.0</h1>
-          optional test
-		</div>     
-		
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="crpr">
-          <h1 class="page-header">Rating : {{rating}}.0</h1>
-          <h2 class="sub-header" ng-show="offer === 0 && cr_pro_duration === 0">You have no current project and new offer as of now. Please wait.</h2>
-          <!-- <div class="row" style="padding:5px 5px 5px 5px;border: solid #337AB7  1px;"> -->
-			<h2 class="text-center">{{cr_pro_name}}</h2> 
-			<div class="row" style="margin:5px 0 0 0;">
-			<div class="row" style="border: solid #337AB7  1px;padding:5px 5px 5px 5px;">
-			<table class="table">
-			<tr><td>{{cr_pro_desc}}</td></tr>
-			<tr><td><label>Duration: </label> {{cr_pro_duration}} weeks</td></tr>
-			<tr><td><label>Testing Type: </label> {{cr_pro_test_type}}</td></tr>
-			<tr><td><label>App Location: </label> {{cr_pro_pro_loc}}</td></tr>
-			<tr><td><label>Report Location: </label> {{cr_pro_rep_loc}}</td></tr>
-			</table>
+      <div class="rowmain">
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="home">
+			<div class="row" style="padding:5px 5px 5px 5px; border: solid #70D2EB  2px; opacity:0.8; background-color:#ffffff">
+			<h1>Hello!!</h1>
+			<h2>it is home page</h2>
 			</div>
-			</div>
-			
-			<div class="row" style="margin:5px 0 0 0;">
-			<div class="row" style="border: solid #337AB7  1px;">
-			<div class="row h1 text-center">Past Bugs</div>
-			<table class="table table-hover table-striped">
-			<tr>
-			<td>Date</td>
-			<td>No.of Bugs</td>
-			<td>Bug Description</td>
-			</tr>
-			<tr ng-repeat="id in details">
-			<td>{{id.date.substr(0,10)}}</td>
-			<td>{{id.numofbugs}}</td>
-			<td>{{id.bugdescription}}</td>
-			</tr>
-			</table>
-			<div class="row h1 text-center">New Bugs</div>
-			<form name="bugForm" class="form-horizontal" style="margin:0 0 0 20px" novalidate>{{bugForm.$valid}}
-			<div class="form-group" ng-class="{'has-error': (bugForm.submitted || bugForm.bugs_no.$touched || bugForm.bugs_no.$dirty) && bugForm.bugs_no.$invalid,
-										'has-success': (bugForm.bugs_no.$touched || bugForm.bugs_no.$dirty) && bugForm.bugs_no.$valid }">
-			<label>No. Of Bugs: </label><br><input type="text" name="bugs_no" ng-model="bug.bugs_no" class="form-control" style="width:20%" ng-pattern="/^[0-9]{1,2}$/" required>
-			<span class=" help-block glyphicon glyphicon-exclamation-sign" ng-show="(bugForm.submitted || bugForm.bugs_no.$touched || bugForm.bugs_no.$dirty) && bugForm.bugs_no.$error.required">Description Required</span>
-			<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="bugForm.bugs_no.$error.pattern">Pattern is wrong.</span>
-			</div>
-					
-			<div class="form-group" ng-class="{'has-error': (bugForm.submitted || bugForm.bugs_desc.$touched || bugForm.bugs_desc.$dirty) && bugForm.bugs_desc.$invalid,
-										'has-success': (bugForm.bugs_desc.$touched || bugForm.bugs_desc.$dirty) && bugForm.bugs_desc.$valid }">
-			<label>Bug Description: </label><br><textarea  name="bugs_desc" ng-model="bug.bugs_desc" class="form-control" ng-maxlength="100" style="width:20%" required></textarea>
-			<span class=" help-block glyphicon glyphicon-exclamation-sign" ng-show="(bugForm.submitted || bugForm.bugs_desc.$touched || bugForm.bugs_desc.$dirty) && bugForm.bugs_desc.$error.required">Description Required</span>
-			<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="bugForm.bugs_desc.$error.maxlength">Description should not be greater than 100 characters.</span>
-			</div>
-			
-			<div class="form-group">
-			<button type="button" class="btn btn-default btn-primary " ng-click="rep_bug()" ng-disabled="bugForm.$invalid">Submit</button>
-			<!-- <input type="file"><br> -->
-			</div>
-			</form>
-			</div>
-			</div>
-		</div>     
-	
+		</div>
+	    
+        
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="nwpr">
-          	<h1 class="page-header">Rating : {{rating}}.0</h1>
-          
-        	<div class="row" style="padding:5px 5px 5px 5px;border: solid #337AB7  1px;">
-			<label>Project Name:</label> {{nw_pro_name}}
-			</div>
+			<div class="row col-md-6" style="margin:0 25% 0 28%;padding:5px 5px 5px 5px;border: solid #337AB7  1px;opacity:0.9; background-color:#ffffff">
+				
+				
+				<form name="new_project_form" ng-submit="new_project_form.$valid && newProject()" novalidate>
+				
+				<div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.app_name.$touched || new_project_form.app_name.$dirty) && new_project_form.app_name.$invalid,
+												'has-success': (new_project_form.app_name.$touched || new_project_form.app_name.$dirty) && new_project_form.app_name.$valid}">
+				  <input type="text" name="app_name" data-ng-model="app_name" class="form-control" placeholder="Application Name" aria-describedby="basic-addon1" required>
+				  <span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.app_name.$touched || new_project_form.app_name.$dirty) && new_project_form.app_name.$error.required">App Name Required</span>
+				</div>
 			
-			<div class="row" style="margin:5px 0 0 0;">
-			<div class="row" style="border: solid #337AB7  1px;padding:5px 5px 5px 5px;">
-			<label>Project Description:</label>{{nw_pro_desc}}
-			</div>
-			</div>
-			
-			<div class="row" style="margin:5px 0 0 0;">
-			<div class="row" style="border: solid #337AB7  1px;">
-			<table class="table">
-			<tr>
-			<td><label>Duration: </label> {{nw_pro_duration}} weeks</td>
-			<td><label>Testing Type: </label> {{nw_pro_test_type}}</td>	
-		</tr>
-			</table>
-			</div>
-			</div>
-			
-			<div class="row" style="margin:5px 0 0 0;">
-			<div class="row" style="border: solid #337AB7  1px;">
-			<div class="row h1 text-center">Offer</div>
-			<table class="table">
-			<tr>
-			<td><button type="button" class="btn btn-default btn-success btn-lg btn-block" ng-click="nwpr_acc()">Accept</button></td>
-			<td><button type="button" class="btn btn-default btn-danger btn-success btn-lg btn-block" ng-click="nwpr_rej()">Reject</button></td>
-			</tr>
-			</table>
-			</div>
-			</div>
-			</div>
 
-		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="blrw">
-          <h1 class="page-header">Rating : {{rating}}.0</h1>
-          billing
-		</div>     
-		
-		<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" ng-show="prof">
-          <h1 class="page-header">Rating : {{rating}}.0</h1>
-          <div class="table-responsive">
-            <table class="table">
-            <tr><td><label>Email: </label><span  class="pull-right"> {{profile_email}}</span></td></tr>
-            <tr><td><label>First Name: </label><span  class="pull-right"> {{profile_fname}}</span> </td></tr>
-            <tr><td><label>Middle Name: </label><span  class="pull-right"> {{profile_mname}}</span></td></tr>
-            <tr><td><label>Last Name: </label><span  class="pull-right"> {{profile_lname}}</span></td></tr>
-            <tr><td><label>Date of Birth: </label><span  class="pull-right"> {{profile_dob}}</span></td></tr>
-            <tr><td><label>Gender: </label><span  class="pull-right"> {{profile_gender}}</span></td></tr>
-            <tr><td><label>Address Line 1: </label><span  class="pull-right"> {{profile_adln1}}</span></td></tr>
-            <tr ng-hide="profile_adln2 === 'null' || profile_adln2 === 'undefined'"><td><label>Address Line 2: </label><span  class="pull-right"> {{profile_adln2}}</span></td></tr>
-            <tr><td><label>City: </label><span  class="pull-right"> {{profile_city}}</span></td></tr>
-            <tr><td><label>State: </label><span  class="pull-right"> {{profile_state}}</span></td></tr>
-            <tr><td><label>Country: </label><span  class="pull-right"> {{profile_country}}</span></td></tr>
-            <tr><td><label>Contact: </label><span  class="pull-right"> {{profile_contact}}</span></td></tr>
-            <tr><td><label>Skype: </label><span  class="pull-right"> {{profile_skype}}</span></td></tr>
-            <tr ng-hide="profile_pl1 === 'null'"><td><label>Testing Platform: </label><span  class="pull-right"><span  class="pull-right"> {{profile_pl1}}</span></td></tr>
-            <tr ng-hide="profile_pl2 === 'null'"><td><label>Testing Platform: </label><span  class="pull-right"> {{profile_pl2}}</span></td></tr>
-            <tr ng-hide="profile_pl3 === 'null'"><td><label>Testing Platform: </label><span  class="pull-right"> {{profile_pl3}}</span></td></tr>
-            <tr ng-hide="profile_ty1 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty1}}</span></td></tr>
-            <tr ng-hide="profile_ty2 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty2}}</span></td></tr>
-            <tr ng-hide="profile_ty3 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty3}}</span></td></tr>
-            <tr ng-hide="profile_ty4 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty4}}</span></td></tr>
-            <tr ng-hide="profile_ty5 === 'null'"><td><label>Testing Type: </label><span  class="pull-right"> {{profile_ty5}}</span></td></tr>
-          	</table>
-          </div>
-		</div>   
-		
-		</div>     
-		
-<!-- <div class="row" style="position: absolute;height: 20px;margin-bottom: 0;bottom: 0;width: 100%;">
-		<footer class="">
-    <nav>
-        <div class="container fivecolumns">
-            <div class="row">
-                    <div class="col-xs-2">
-                        <ul>
-                            <li>I want</li>
-                            <li><a href="/en/functional-testing">Functional testing</a></li>
-                            <li><a href="/en/usability-testing">Usability testing</a></li>
-                            <li><a href="/en/localization-testing">Localization testing</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-2">
-                        <ul>
-                            <li>For a</li>
-                            <li><a href="/en/website-testing">Website</a></li>
-                            <li><a href="/en/ios-testing">iOS Application</a></li>
-                            <li><a href="/en/android-testing">Android Application</a></li>
-                            <li><a href="/en/software-quality-assurance">Mac or PC software</a></li>
-                            <li><a href="/en/game-testing">Video game</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-2">
-                        <ul>
-                            <li>How to start</li>
-                            <li><a href="/en/software-testing-services">What you get</a></li>
-                            <li><a href="/en/software-testing-process">How it works</a></li>
-                            <li><a href="/en/software-testing-cost">Pricing</a></li>
-                            <li><a href="/en/client-registration">Sign up</a></li>
-                            <li><a href="/en/software-testing-questions">FAQ</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-2">
-                        <ul>
-                            <li>About us</li>
-                            <li><a href="/en/crowdsourcing-platform">Story</a></li>
-                            <li><a href="/en/crowdsourced-software-testing-management">Management</a></li>
-                            <li><a href="/en/contact-crowdsourced-testing">Contact us</a></li>
-                            <li><a href="https://crowdsourcedtesting.com/resources/" target="_blank">Resources</a></li>
-                            <li><a href="https://leantesting.com/" target="_blank">Free bug tracker</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-2">
-                        <ul>
-                            <li>The community</li>
-                            <li><a target="_blank" href="https://www.facebook.com/CrowdsourcedTesting">Facebook</a></li>
-                            <li><a target="_blank" href="https://www.linkedin.com/company/crowdsourced-testing-co-">LinkedIn</a></li>
-                            <li><a target="_blank" href="https://twitter.com/crowdsourcingqa">Twitter</a></li>
-                            <li><a target="_blank" href="https://plus.google.com/+Crowdsourcedtesting" rel="publisher">Google+</a></li>
-                            <li><a target="_blank" href="https://www.pinterest.com/crowdsourced/">Pinterest</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    </nav>
-    <div class="bg">
-        <div class="container">
-            <p>Crowdsourced Testing SpA © All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-</div>	 -->
+				<div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.desc.$touched || new_project_form.desc.$dirty) && new_project_form.desc.$invalid,
+											'has-success': (new_project_form.desc.$touched || new_project_form.desc.$dirty) && new_project_form.desc.$valid}">
+				<textarea ng-model="desc" name="desc" id="desc" rows="4" cols="50" class="form-control" placeholder="Brief Description for App" required></textarea>
+				<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.desc.$touched || new_project_form.desc.$dirty) && new_project_form.desc.$error.required">App Description Required</span>
+				</div>
+					
+				<div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.nf_testers.$touched || new_project_form.nf_testers.$dirty) && new_project_form.nf_testers.$invalid,
+												'has-success': (new_project_form.nf_testers.$touched || new_project_form.nf_testers.$dirty) && new_project_form.nf_testers.$valid}">
+				  <input type="text" name="nf_testers" data-ng-model="nf_testers" class="form-control" placeholder="Number of Testers" ng-maxlength="2" ng-pattern="/^[0-9]{1,2}$/" aria-describedby="basic-addon1" required>
+				  <span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.nf_testers.$touched || new_project_form.nf_testers.$dirty) && new_project_form.nf_testers.$error.required">How Many testers?</span>
+					<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="new_project_form.nf_testers.$error.maxlength">You can demand maximum 10 testers.</span>
+					<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="new_project_form.nf_testers.$error.pattern">Number of testers should be numeric</span>
+				</div>
+                    
+                    
+               	<div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.platform.$touched || new_project_form.platform.$dirty) && new_project_form.platform.$invalid,
+												'has-success': (new_project_form.platform.$touched || new_project_form.platform.$dirty) && new_project_form.platform.$valid}">
+					<select name="platform" class="form-control" ng-model="platform" required>
+	        		<option label="Platform" selected="" disabled=""></option>
+                 	<option value="Android">Android</option>
+                 	<option value="IOS">IOS</option>
+                 	<option value="Windows">Windows</option>
+                 	</select>
+					<span class=" help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.platform.$touched || new_project_form.platform.$dirty) && new_project_form.platform.$error.required">Please select testing platform</span>
+                 </div>
+                 
 
-      </div>
-  </body>
-  <script type="text/javascript">
+		        <div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.lang_pref.$touched || new_project_form.lang_pref.$dirty) && new_project_form.lang_pref.$invalid,					
+		        									'has-success': (signupForm.lang_pref.$touched || signupForm.lang_pref.$dirty) && signupForm.lang_pref.$valid}">
+					<select name="lang_pref" class="form-control" ng-model="lang_pref" required>
+	        		<option label="Language Preference" selected="" disabled=""></option>
+                 	<option value="English">English</option>
+                 	<option value="Chinese">Chinese</option>
+                 	</select>
+                 	<span class=" help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.lang_pref.$touched || new_project_form.lang_pref.$dirty) && new_project_form.lang_pref.$error.required">Language Required</span>
+                 </div>
+					
+				<div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.testing_ty.$touched || new_project_form.testing_ty.$dirty) && new_project_form.testing_ty.$invalid,					
+													'has-success': (signupForm.testing_ty.$touched || signupForm.testing_ty.$dirty) && signupForm.testing_ty.$valid}">
+					<select name="testing_ty" class="form-control" ng-model="testing_ty" required>
+	        		<option label="Testing Type" selected="" disabled=""></option>
+                 	<option value="Functional Testing">Functional Testing</option>
+                 	<option value="Laboratory Testing">Laboratory Testing</option>
+                 	<option value="Performance Testing">Performance Testing</option>
+                 	<option value="Memory Leakage Testing">Memory Leakage Testing</option>
+                 	<option value="Interrupt Testing">Interrupt Testing</option>
+                 	</select>
+                 	<span class=" help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.testing_ty.$touched || new_project_form.testing_ty.$dirty) && new_project_form.testing_ty.$error.required">Testing type Required</span>
+                 </div>
+                 
+                 <div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.pr_budget.$touched || new_project_form.pr_budget.$dirty) && new_project_form.pr_budget.$invalid,
+											'has-success': (new_project_form.pr_budget.$touched || new_project_form.pr_budget.$dirty) && new_project_form.pr_budget.$valid}">
+			  		<div class="input-group">
+	  				<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-usd" ></span></span>
+			  		<input type="text" name="pr_budget" data-ng-model="pr_budget" class="form-control" placeholder="Project Budget" ng-pattern="/^[0-9]{1,}$/" aria-describedby="basic-addon1" required>
+			  		</div>
+			  		<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.pr_budget.$touched || new_project_form.pr_budget.$dirty) && new_project_form.pr_budget.$error.required">Project Budget required</span>
+					<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="new_project_form.pr_budget.$error.pattern">Project Budget should be numeric</span>
+				</div>
+
+                <div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.pr_duration.$touched || new_project_form.pr_duration.$dirty) && new_project_form.pr_duration.$invalid,
+												'has-success': (new_project_form.pr_duration.$touched || new_project_form.pr_duration.$dirty) && new_project_form.pr_duration.$valid}">
+			  		<div class="input-group">
+		  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" ></span></span>
+			  		<input type="text" name="pr_duration" data-ng-model="pr_duration" class="form-control" placeholder="Project Duration in weeks" ng-pattern="/^[0-9]{1,}$/" aria-describedby="basic-addon1" required>
+			  		</div>
+			  		<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.pr_duration.$touched || new_project_form.pr_duration.$dirty) && new_project_form.pr_duration.$error.required">Project Duration required</span>
+					<span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="new_project_form.pr_duration.$error.pattern">Project Duration should be numeric</span>
+				</div>
+                
+                <div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.pr_accessAr.$touched || new_project_form.pr_accessAr.$dirty) && new_project_form.pr_accessAr.$invalid,
+												'has-success': (new_project_form.pr_accessAr.$touched || new_project_form.pr_accessAr.$dirty) && new_project_form.pr_accessAr.$valid}">
+				  <input type="text" name="pr_accessAr" data-ng-model="pr_accessAr" class="form-control" placeholder="Project Access Area Link" aria-describedby="basic-addon1" required>
+				  <span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.pr_accessAr.$touched || new_project_form.pr_accessAr.$dirty) && new_project_form.pr_accessAr.$error.required">Project Access area Required</span>
+				</div>
+				
+				<div class="form-group" ng-class="{'has-error': (new_project_form.submitted || new_project_form.rp_accessAr.$touched || new_project_form.rp_accessAr.$dirty) && new_project_form.rp_accessAr.$invalid,
+												'has-success': (new_project_form.rp_accessAr.$touched || new_project_form.rp_accessAr.$dirty) && new_project_form.rp_accessAr.$valid}">
+				  <input type="text" name="rp_accessAr" data-ng-model="rp_accessAr" class="form-control" placeholder="Report Access Area Link" aria-describedby="basic-addon1" required>
+				  <span class="help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.rp_accessAr.$touched || new_project_form.rp_accessAr.$dirty) && new_project_form.rp_accessAr.$error.required">Report Access area Required</span>
+				</div>
+				
+                <input type="submit" class="btn btn-default btn-primary" style="width:100%" ng-click="new_project_form.submitted = true">
+
+				</form>		
+	 		 		
+			</div>
+			
+		</div>
+		
+	    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="fntr">
+		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
+				<h1>Hello!!</h1>
+				<h2>it is find a tester page</h2><br/>
+				  <Label for= "app_name_tr" > Enter Application Name  </Label>
+			    <input type="text" ng-model="app_name_tr" name="app_name_tr" required>
+			    <br/>
+			    <input type="submit", ng-click="findTester()">
+			</div>
+		  
+	    </div>
+	    
+	    
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="actr">
+			<div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
+			    
+			    <div ng-repeat="item in details">
+				<input type="checkbox" ng-model="item.selected"  ng-true-value="true" ng-false-value="false"/>{{item.first_name}} {{item.last_name}}
+				</div>
+				
+				<input type="button" name="submit" value="submit" ng-click="acceptTester(details)"/>
+				
+				
+				    
+			</div>
+	    </div>
+	    
+	    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="rupr">
+		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
+				<h1>Applications</h1>
+				<div>
+				<table class="table table-hover table-striped">
+				<tr>
+				<td>Application Name</td>
+				<td>Application Budget</td>
+				<td>Application Status</td>
+				</tr>
+				<tr ng-repeat="item in details">
+				<td>{{item.app_name}}</td>
+				<td>{{item.project_bugdet}}</td>
+				<td ng-show="item.project_status === 'P'">Pending</td>
+				<td ng-show="item.project_status === 'C'">Completed</td>
+				</tr>
+				</table>
+				</div>
+			</div>
+		  
+	    </div>
+	  	
+	  	
+	  	 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="blpr">
+		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
+				<h1>Hello!!</h1>
+				<h2>it is find a billing page</h2><br/>
+				  <Label for= "app_name_bl" > Enter Application Name  </Label>
+			    <input type="text" ng-model="app_name_bl" name="app_name_bl" required>
+			    <br/>
+			    <input type="submit", ng-click="billing()">
+			</div>
+		  
+	    </div>
+	    
+	    
+	    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="blcl">
+		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
+				<div ng-repeat="item in details">
+				<label>Enter points for {{item.first_name}} {{item.last_name}}:</label>
+				<input type="text" ng-model="item.points" />
+				</div>
+			    <br/>
+			    <input type="submit", ng-click="Billingclosure(details)">
+			</div>	  
+	    </div>
+	    
+	    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="bill">
+		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
+				<h1>Project {{item.app_name}} is closed</h1>
+				<h2<Billing Information Below:</h2>
+				<div >
+			    <table class="table table-hover table-striped">
+				<tr>
+				<td>Application Name</td>
+				<td>Testers</td>
+				<td>Payment</td>
+				</tr>
+				<tr ng-repeat="item in details">
+				<td>{{item.app_name}}</td>
+				<td>{{item.first_name}} {{item.last_name}}</td>
+				<td>{{item.pay}}</td>
+				</tr>
+				</table>
+			</div>	  
+	    </div>
+	    
+	    
+	    </div>
+	 </div>
+</div>
+    
+ </body>
+ 
+ <script type="text/javascript">
 
 var app = angular.module('mtaas', []);
 
 app.controller('mtaas', ['$scope','$http','$window',function ($scope,$http,$window)  {
 	
-	$scope.home1 = true;
-	$scope.opts = false;
-	$scope.crpr = false;
-	$scope.nwpr = false;
-	$scope.blrw = false;
+		$scope.home = true;
+		$scope.nwpr = false;
+		$scope.fntr = false;
+		$scope.actr = false;
+		$scope.blpr = false;
+		$scope.blcl = false;
+		$scope.rupr =false;	
 	
 	
 	$http({
@@ -483,182 +340,302 @@ then(function(response)
 	{
 	  	if (response.data.status == 200)
 	  		{
-	  			$scope.first_name=response.data.fname;
+	  			//alert(response.data.fname);
+  			    $scope.email=response.data.mail;
+  			    $scope.first_name=response.data.fname;
 	  			$scope.last_name=response.data.lname;
-				$scope.emailid=response.data.mail;
-				$scope.rating = response.data.rating;
-				$scope.offer = response.data.offer;
 			}
 	  	
 	 });
-	
-	$scope.ustp = function()
-	{
-
-alert("ankit");
-	}
-	
-	$scope.ho_me = function (){
-		$scope.home1 = true;
-		$scope.opts = false;
-		$scope.crpr = false;
+	 
+	 
+	 $scope.homePage = function (){
+		$scope.home = true;
 		$scope.nwpr = false;
-		$scope.blrw = false;
-		$scope.prof = false;
+		$scope.fntr = false;
+		$scope.actr = false;
+		$scope.blpr = false;
+		$scope.blcl= false;	
+		$scope.rupr = false;
 		
 	}
+
 	
-	$scope.op_ts = function (){
-		$scope.opts = true;
-		$scope.crpr = false;
+	$scope.nwprPage = function (){ 
+		
+		$scope.home = false;
+		$scope.nwpr = true;
+		$scope.fntr = false;
+		$scope.actr = false;
+		$scope.blpr = false;
+		$scope.blcl= false;	
+	    $scope.rupr = false;
+				
+	}
+    
+   
+   $scope.fntrPage = function (){ 
+
+	    $scope.home = false;
 		$scope.nwpr = false;
-		$scope.blrw = false;
-		$scope.home1 = false;
-		$scope.prof = false;
+		$scope.fntr = true;
+		$scope.actr = false;
+		$scope.blpr = false;
+		$scope.blcl= false;	
+		$scope.rupr = false;	
+				
+				
 	}
 	
-	$scope.cr_pr = function (){
-		//alert("jhsdfkjshFDKJHS");
+
+   $scope.blprPage = function (){ 
+
+	    $scope.home = false;
+		$scope.nwpr = false;
+		$scope.fntr = false;
+		$scope.actr = false;
+		$scope.blpr = true;
+		$scope.blcl= false;	
+		$scope.rupr = false;
+					
+	}
+	
+	
+	$scope.newProject = function (){
+	
+     alert("hello");
+	 alert($scope.email);					
+	
+	  $http({
+	  	  		method: 'POST',
+	  	 		url: '/newProject',
+	  	 		data: { "ad_email":$scope.email, 
+			  	 		"platform":$scope.platform,
+			  	 		"app_name":$scope.app_name ,
+			  	 		"description":$scope.desc ,
+			  	 		"no_of_testers":$scope.nf_testers,
+			  	 		"language_preference":$scope.lang_pref,
+			  	 		"project_testing_type":$scope.testing_ty,
+			  	 		"project_bugdet":$scope.pr_budget,
+			  	 		"Project_duration":$scope.pr_duration,
+			  	 		"project_access_area":$scope.pr_accessAr,
+			  	 		"report_access_area":$scope.rp_accessAr}
+		    	 }).then(function(response)
+		    	    {
+			    		if (response.data.status == 200)
+		    	  		{	  		      	
+			  		  		alert("New Project got created successfully");
+			  		  		$scope.home = true;
+							$scope.nwpr = false;
+							$scope.fntr = false;
+							$scope.actr = false; 	
+							$scope.blpr = false;
+							$scope.blcl= false;	
+							$scope.rupr = false;	
+		    	  		       
+		    	  		 }		
+		    	   });
+	}
+	
+	
+	  $scope.findTester = function (){
+    
+      alert($scope.email);
+      alert($scope.app_name_tr);
+  
+      $http({
+	  	  		method: 'POST',
+	  	 		url: '/findTester',
+	  	 		data: { "ad_email":$scope.email,"app_name":$scope.app_name_tr}
+		  	 		
+		      }).then(function(response)  
+		        {
+		    	//alert(response.data.status);
+			    	if (response.data.status === 200)
+		    	  		{	
+					    	alert(response.data.detail[0]);
+						    
+						    $scope.home = false;
+							$scope.nwpr = false;
+							$scope.fntr = false;
+							$scope.actr = true; 	
+							$scope.blpr = false;
+							$scope.blcl= false;	
+							$scope.rupr = false;	
+							
+							$scope.details=response.data.detail;
+        	  		      
+        	  		    
+        	  		     }  
+        	  		     
+        	  		     if(response.data.status ===	500)
+        	  		      {
+        	  		       alert("Not enough testers in system at this point of time , Please try again");
+        	  		        $scope.home = true;
+							$scope.nwpr = false;
+							$scope.fntr = false;
+							$scope.actr = false; 	
+							$scope.blpr = false;
+							$scope.blcl= false;	
+							$scope.rupr = false;	
+        	  		      
+        	  		      }
+        	  		      if(response.data.status===100)
+        	  		      {
+        	  		        alert("Testers already assigned , can't assign more testers for this application");
+        	  		        $scope.home = true;
+							$scope.nwpr = false;
+							$scope.fntr = false;
+							$scope.actr = false; 	
+							$scope.blpr = false;
+							$scope.blcl= false;	
+							$scope.rupr = false;	
+        	  		      
+        	  		      }
+        	  		                 	  		    
+	            });
+	}
+	
+	
+	$scope.acceptTester = function (data) { 
+	
+	alert("coming in accept tester");
+    alert(data[0].first_name);
+    alert(data[0].selected);
+    alert(data[1].selected);
+	    
+	   $http({
+	  	  		method: 'POST',
+	  	 		url: '/acceptTester',
+	  	 		data: { "ap_email":$scope.email,"app_name":$scope.app_name_tr,"data":data}
+		  	 		
+		      }).then(function(response)  
+		        {
+			    	if (response.data.status == 200)
+		    	  		{	
+						    
+						    $scope.home = true;
+							$scope.nwpr = false;
+							$scope.fntr = false;
+							$scope.actr = false; 
+							$scope.blpr = false;
+							$scope.blcl= false;	
+							$scope.rupr = false;	
+							
+							//$scope.details=response.data.detail;
+        	  		      
+        	  		    
+        	  		     }  	           	  		    
+	            });    
+   
+	
+	}	
+	
+	
+	$scope.runningProject = function (){
+	
+	alert("	In running project");
+	
+	
+	$http({		
+	method: 'POST',			
+	url: '/runningProjects',
+	data: { "ad_email":$scope.email}			
+		  }).then(function(response){
+					
+			if (response.data.status === 200)
+			{
+			
+				$scope.home = false;			
+				$scope.nwpr = false;			
+				$scope.fntr = false;			
+				$scope.actr = false;						
+				$scope.blpr = false;			
+				$scope.blcl= false;	
+				$scope.rupr = true;
+				$scope.bill= false;
+						
+				$scope.details=response.data.detail;
+            }
+	
+	});
+	
+		
+	
+}
+	
+   
+   
+   
+$scope.billing = function (){
+
+	alert($scope.email);		
+	alert($scope.app_name_bl);
+	
+	$http({		
+	method: 'POST',			
+	url: '/billing',
+	data: { "ad_email":$scope.email,"app_name":$scope.app_name_bl}			
+		  }).then(function(response){
+					
+			if (response.data.status === 200)
+			{
+			
+				$scope.home = false;			
+				$scope.nwpr = false;			
+				$scope.fntr = false;			
+				$scope.actr = false;					
+				$scope.blpr = false;			
+				$scope.blcl= true;	
+				$scope.rupr = false;
+						
+				$scope.details=response.data.detail;
+				$scope.project_id=response.data.details;
+			
+			}
+			
+			if(response.data.status === 100){ 	
+			   alert("Project not yet started");
+			}
+			
+			});
+
+}
+
+$scope.Billingclosure = function (data){
+
+	alert(data[0].tr_email);
+	alert(data[0].project_id);
+	alert(data[0].points);
+
 		$http({
-			method: 'POST',
-			url: '/curpro',
-			data: {"email":$scope.emailid}
-		}).
-			then(function(response){
-				//alert("After fetching desc");
-				$scope.opts = false;
-				$scope.crpr = true;
-				$scope.nwpr = false;
-				$scope.blrw = false;
-				$scope.home1 = false;
-				$scope.prof = false;
+		method: 'POST',
+		url: '/billingClosure',	
+		data: { "ad_email":$scope.email,"data":data}			
+			}).then(function(response)
+				{
+				alert(response.data.status);
 				
-				$scope.cr_pro_id = response.data.results[0]["project_id"];
-				$scope.cr_pro_desc = response.data.results[0]["description"];
-				$scope.cr_pro_duration =response.data.results[0]["Project_duration"];
-				$scope.cr_pro_name =response.data.results[0]["app_name"];
-				$scope.cr_pro_test_type = response.data.results[0]["project_testing_type"];
-				$scope.cr_pro_pro_loc = response.data.results[0]["project_access_area"];
-				$scope.cr_pro_rep_loc = response.data.results[0]["report_access_area"];
-				$scope.details = response.data.results1;
-				//alert($scope.appdesc1);
+				if (response.data.status === 200)
+				
+				{
+					$scope.home = false	;
+					$scope.nwpr = false;
+					$scope.fntr = false;
+					$scope.actr = false;
+					$scope.blpr = false;
+					$scope.blcl= false;
+					$scope.rupr = false;
+					$scope.bill =true;
+				  
+				   $scope.details=response.data.detail;
+				}
 				
 			});
-	}
-	
-	$scope.nw_pr = function (){
-		$scope.opts = false;
-		$scope.crpr = false;
-		$scope.nwpr = true;
-		$scope.blrw = false;
-		$scope.home1 = false;
-		$scope.prof = false;
-		$http({
-  	  		method: 'POST',
-  	 		url: '/newpro',
-  	 		data: {"email":$scope.emailid}
-    	 }).
-    	then(function(response)
-    	{
-//    		alert(response.data.results);
-//    		alert(response.data.results[0]["project_id"]);
-    		$scope.nw_pro_name = response.data.results[0]["app_name"];
-    		$scope.nw_pro_desc = response.data.results[0]["description"];
-    		$scope.nw_pro_duration = response.data.results[0]["project_duration"];
-    		$scope.nw_pro_test_type = response.data.results[0]["project_testing_type"];
-			$scope.nw_pro_pid = response.data.results[0]["project_id"];
-    	})
-	
-	}
-	
-	$scope.bl_rw = function (){
-		$scope.opts = false;
-		$scope.crpr = false;
-		$scope.nwpr = false;
-		$scope.blrw = true;
-		$scope.home1 = false;
-		$scope.prof = false;
-	}
-	
-	$scope.nwpr_acc = function (){
+} 
 		
-//		alert("ankit");
-		$http({
-	  	  		method: 'POST',
-	  	 		url: '/nwpr_dec',
-	  	 		data: {"dec":"A","email":$scope.emailid,"pid":$scope.nw_pro_pid,"fname":$scope.first_name,"lname":$scope.last_name}
-	    	 }).
-	    	then(function(response)
-	    	{
-	    		$window.location.href = '/tr_dashboard';
-	    	})
-
-	}
 	
-	$scope.nwpr_rej = function (){
-//	alert("ankit");
-	$http({
-			method: 'POST',
-			url: '/nwpr_dec',
-			data: {"dec":"R","email":$scope.emailid,"pid":$scope.nw_pro_pid}
-	 }).
-	then(function(response)
-	{
-		$window.location.href = '/tr_dashboard';
-	})
-	
-	}
-	
-	$scope.pro_file = function (){
-		
-/* 		alert("ankit"); */
-		$http({
-				method: 'POST',
-				url: '/profil',
-				data: {"email":$scope.emailid}
-		 }).
-		then(function(response)
-		{
-			$scope.profile_email = response.data.results[0]["email"];
-			$scope.profile_fname = response.data.results[0]["first_name"];
-			$scope.profile_mname = response.data.results[0]["middle_name"];
-			$scope.profile_lname = response.data.results[0]["last_name"];
-			$scope.profile_dob = response.data.results[0]["dob"].substr(0,10);
-			if (response.data.results[0]["sex"] === 'm')
-				{
-				$scope.profile_gender = "Male";	
-				}
-			else
-				{
-				$scope.profile_gender = "Female";
-				}
-			$scope.profile_adln1 = response.data.results[0]["address_line1"];
-			$scope.profile_adln2 = response.data.results[0]["address_line2"];
-			$scope.profile_city = response.data.results[0]["city"];
-			$scope.profile_state = response.data.results[0]["state"];
-			$scope.profile_country = response.data.results[0]["country"];
-			$scope.profile_contact = response.data.results[0]["phone_no"];
-			$scope.profile_skype = response.data.results[0]["skype_id"];
-			$scope.profile_pl1 = response.data.results[0]["platform_android"];
-			$scope.profile_pl2 = response.data.results[0]["platform_ios"];
-			$scope.profile_pl3 = response.data.results[0]["platform_windows"];
-			$scope.profile_ty1 = response.data.results[0]["testing_ty_functional"];
-			$scope.profile_ty2 = response.data.results[0]["testing_ty_laboratory"];
-			$scope.profile_ty3 = response.data.results[0]["testing_ty_performance"];
-			$scope.profile_ty4 = response.data.results[0]["testing_ty_memorylk"];
-			$scope.profile_ty5 = response.data.results[0]["testing_ty_interrupt"];
-			$scope.opts = false;
-			$scope.crpr = false;
-			$scope.nwpr = false;
-			$scope.blrw = false;
-			$scope.home1 = false;
-			$scope.prof = true;
-		})
-		
-	}
-	
-	
-	$scope.log_out = function (){
+  $scope.log_out = function (){
 		$http({
 	  	  		method: 'POST',
 	  	 		url: '/logout',
@@ -669,18 +646,7 @@ alert("ankit");
 	    	})
 	}
 	
-	$scope.rep_bug = function (){
-		alert("bnm,Sc,mbn,m");
-		$http({
-	  	  		method: 'POST',
-	  	 		url: '/repbug',
-	  	 		data: {"email":$scope.emailid,"pid":$scope.cr_pro_id,"bug":$scope.bug}
-	    	 }).
-	    	then(function(response)
-	    	{
-	    		$window.location.href = '/tr_dashboard';
-	    	})
-	}
+
 }]);
 
 </script>
