@@ -49,7 +49,7 @@
 .has-error .form-control{
 	border:1px solid red;
 }
-.rowmain{
+/* .rowmain{
 
 background: url("./images/cloud.jpg");
 
@@ -58,7 +58,7 @@ height:1300px;
 top:53px;
 left:250px;
 
-}
+} */
 
 </style>
   </head>
@@ -102,7 +102,7 @@ left:250px;
 
     <div class="container-fluid" id="wrapper">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar" style="background: url(./images/cloud.jpg);">
+        <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <!-- <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li> -->
             <li><button type="button" class="list-group-item active" ng-click="ho_me()" style="margin:1px 0 0 0">Home</button></li>
@@ -129,59 +129,24 @@ left:250px;
         
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="home1"> 
           
-          <div class="row col-md-7" style="margin:0 25% 0 23%;padding:5px 5px 5px 5px;border: solid #337AB7  1px;opacity:0.9; background-color:#ffffff">
-          <h3 class="page-header">Rating : {{rating}}.0</h3>
+          
+          <h1 class="page-header">Rating : {{rating}}.0</h1>
 			<h1 align= "center">Welcome to MTaas</h1>
-			 <h3 align= "center">Your Application will be tested here on demand for free!<h3><br/>
-			 <div style="text-align:left;">
-			  <h4 >
-			  &#10004; Go Ahead and take optional test to increase your rating(if rating is zero). <br/>
+			 <div class="col-md-7" style="text-align:left;margin:0 0 0 20%">
+			  <h4>
+			  &#10004; Go Ahead and take optional test to increase your rating(0). <br/>
 			  &#10004; Accept or reject new project requests as per your choice<br/>
 			  &#10004; check your current project and do timely bug reporting<br/>
 			  &#10004; Check your payment per project in billing & Rewards page.
 			</h4>
 			</div>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<h6>*Terms & Conditions: Project timings and payments is not guarantee of this website. Please talk directly with app providerabout payment and testing timeline.
-			 Project reports shall be sent timly as per developer's requiremnts.
+
+			<h6 style="margin:53% 0 0 0">*Terms & Conditions: Project timings and payments is not guarantee of this website. Please talk directly with app providerabout payment and testing timeline.
+			 Project reports shall be sent timely as per developer's requirements.
 			<h6/>
-			</div>
-          
-          
-
-<!--           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div> -->
-
-<!--           <h2 class="sub-header">Section title</h2> -->
-          <div class="table-responsive">
-          </div>
         </div>
         
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="opacity:0.9; background-color:#ffffff" ng-show="opts">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="opts">
           <h1 class="page-header">Rating : {{rating}}.0</h1>
           <form name="test_form" enctype="multipart/form-data" class="form-horizontal" novalidate>
 			<div class="row">
@@ -464,23 +429,23 @@ left:250px;
 			</div>
 			</div>
 
-		<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" style=" margin:5% 30% 0 30%;opacity:0.9; background-color:#ffffff" ng-show="blrw">
+		<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" ng-show="blrw">
           <h1 class="page-header">Rating : {{rating}}.0</h1>
             <div class="table-responsive">
             <table class="table">
             <tr>
             	<td><label>Project Name</label></td>
-            	<td><label><span  class="pull-right">Pay</span></label></td>
+            	<td><label><span class="pull-right">Pay</span></label></td>
             </tr>
             <tr ng-repeat="id in paydet">
             	<td>{{id.app_name}}</td>
-            	<td><span  class="pull-right">{{id.pay}}</span></td>
+            	<td><span  class="pull-right">$ {{id.pay}}</span></td>
             </tr>
           	</table>
           </div>
 		</div>     
 		
-		<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" style="opacity:0.9; background-color:#ffffff" ng-show="prof">
+		<div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" ng-show="prof">
           <h1 class="page-header">Rating : {{rating}}.0</h1>
           <div class="table-responsive">
             <table class="table">
