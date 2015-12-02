@@ -22,7 +22,7 @@ exports.test = function(req, res){
 	
 exports.newpro = function(req, res){
 	var email = req.param("email");
-		var myquery = "select ap.project_id,ap.app_name,ap.description,ap.project_testing_type,ap.project_duration from app_project_setup ap,tester_selection_temp sl where tr_status = 'P' and ap.project_id=sl.project_id and sl.tr_email = '"+email+"'";
+		var myquery = "select ap.project_id,ap.app_name,ap.description,ap.project_testing_type,ap.project_duration,ap.ad_email from app_project_setup ap,tester_selection_temp sl where tr_status = 'P' and ap.project_id=sl.project_id and sl.tr_email = '"+email+"'";
 		mysql.fetchData(function(err,results){
 			if(err)
 				{

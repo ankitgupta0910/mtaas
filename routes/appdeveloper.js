@@ -133,7 +133,7 @@ exports.findTester = function(req, res){
 									
 								 }
 								else{
-									cosole("Testers already assigned , can't assign more testers for this application");
+									console.log("Testers already assigned , can't assign more testers for this application");
 									res.send({"status":100});
 									
 								}
@@ -303,6 +303,7 @@ exports.billing = function(req,res){
 /////////////////////////BillingClosure///////////////////////////
 exports.billingClosure = function(req,res){
 
+	console.log("Inside billing closure");
 	var totalPoints = 0;
 	var i = 0;
 	var data=req.param("data");
@@ -320,14 +321,14 @@ exports.billingClosure = function(req,res){
 		console.log(data[i].project_bugdet);
 		data[i].pay = (data[i].project_bugdet / totalPoints) * data[i].points;
 		console.log(" data[i].pay"+ data[i].pay);
-		data[i].rating += data[i].points;
+		data[i].rating += (data[i].points/2);
 		console.log(data[i].pay);
 		console.log("pay: $" + data[i].pay.toFixed(2) + " rating: " + data[i].rating + "\n");
 		
 		var finalpay= data[i].pay.toFixed(2);
 		var finalpoints= data[i].points;
 		var tr_email= data[i].tr_email;
-		
+		var rating=data[i].rating;
 		var q1="update app_workflow set pay='"+finalpay+"',points='"+finalpoints+"' where Project_id='"+project_id+"' and tr_email='"+tr_email+"';"
 		mysql.fetchData(function(err,results){
 			if(err)
@@ -342,7 +343,7 @@ exports.billingClosure = function(req,res){
 		},q1);
 		
 		
-		var myquery2 = "update testers_data set status = 'AV' where email_id = '"+tr_email+"'";
+		var myquery2 = "update testers_data set status = 'AV',rating ="+rating +" where email_id = '"+tr_email+"'";
 		mysql.fetchData(function(err,results){
 			if(err)
 				{

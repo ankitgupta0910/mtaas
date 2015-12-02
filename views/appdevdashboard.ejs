@@ -106,9 +106,26 @@ left:250px;
         
       <div class="rowmain">
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="home">
-			<div class="row" style="padding:5px 5px 5px 5px; border: solid #70D2EB  2px; opacity:0.8; background-color:#ffffff">
-			<h1>Hello!!</h1>
-			<h2>it is home page</h2>
+			<div class="row col-md-7" style="margin:0 25% 0 23%;padding:5px 5px 5px 5px;border: solid #337AB7  1px;opacity:0.9; background-color:#ffffff">
+			<h1 align= "center">Welcome to MTaas</h1>
+			 <h3 align= "center">Your Application will be tested here on demand for free!<h3><br/>
+			 <div style="text-align:left;">
+			  <h4 >
+			  &#10004; Go Ahead and create a new project. <br/>
+			  &#10004; See status of your applications in one place <br/>
+			  &#10004; Find a new testers just on a click to start your app's testing.<br/>
+			  &#10004; close your project and pay testers based on their peformance.
+			</h4>
+			</div>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<h6>*Terms & Conditions: Testing quality is not guarantee of this website as testers are freelancers.
+			Billing and contract with tester is none of this websites's concers; our billing module will calculate the billing
+			according to project budget and payment shall be done directly to testers and not through this website.
+			<h6/>
 			</div>
 		</div>
 	    
@@ -159,6 +176,14 @@ left:250px;
 	        		<option label="Language Preference" selected="" disabled=""></option>
                  	<option value="English">English</option>
                  	<option value="Chinese">Chinese</option>
+                 	<option value="French">French</option>
+                 	<option value="German">German</option>
+                 	<option value="Latin">Latin</option>
+                 	<option value="Portuguese">Portuguese</option>
+                 	<option value="Russian">Russian</option>
+                 	<option value="Japanese">Japanese</option>
+                 	<option value="Korean">Korean</option>
+                 	<option value="Hindi">Hindi</option>
                  	</select>
                  	<span class=" help-block glyphicon glyphicon-exclamation-sign" ng-show="(new_project_form.submitted || new_project_form.lang_pref.$touched || new_project_form.lang_pref.$dirty) && new_project_form.lang_pref.$error.required">Language Required</span>
                  </div>
@@ -216,35 +241,39 @@ left:250px;
 			
 		</div>
 		
-	    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="fntr">
-		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
-				<h1>Hello!!</h1>
-				<h2>it is find a tester page</h2><br/>
-				  <Label for= "app_name_tr" > Enter Application Name  </Label>
-			    <input type="text" ng-model="app_name_tr" name="app_name_tr" required>
-			    <br/>
-			    <input type="submit", ng-click="findTester()">
-			</div>
-		  
+	    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="fntr"> 
+		  <div class="row col-md-6" style="margin:5% 25% 0 23%;padding:5px 5px 5px 5px;border: solid #337AB7  1px;opacity:0.9; background-color:#ffffff">
+			   <h2 align= "center">Find a tester for your App here</h2>
+			   <h4 align= "center">
+				<div class="form-group">
+			   <input type="text" class="form-control" ng-model="app_name_tr" name="app_name_tr" style="width:50%" placeholder="Enter application name" required>
+			    </div>
+			      <div class="form-group">
+			    <input type="submit" class="btn btn-default btn-primary" value="Find Testers" ng-click="findTester()">
+			    </div>
+			    </h4>
+			</div>		  
 	    </div>
 	    
 	    
 		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-show="actr">
-			<div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
-			    
-			    <div ng-repeat="item in details">
-				<input type="checkbox" ng-model="item.selected"  ng-true-value="true" ng-false-value="false"/>{{item.first_name}} {{item.last_name}}
+			<div class="row col-md-6" style="margin:5% 25% 0 23%;padding:5px 5px 5px 5px;border: solid #337AB7  1px;opacity:0.9; background-color:#ffffff">
+			    			   <h2 align= "center">Available Testers</h2><br/>
+			    <div align="center" ng-repeat="item in details">
+			    <div class="checkbox-inline">
+					<input type="checkbox" ng-model="item.selected"  ng-true-value="true" ng-false-value="false"/>{{item.first_name}} {{item.last_name}}
 				</div>
-				
-				<input type="button" name="submit" value="submit" ng-click="acceptTester(details)"/>
-				
+				</div><br/>
+				<div  align="center"class="form-group">
+				<input type="button" name="submit" value="Send Offer" class="btn btn-default btn-primary" ng-click="acceptTester(details)"/>
+				</div>
 				
 				    
 			</div>
 	    </div>
 	    
 	    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="rupr">
-		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
+		    <div class="row col-md-6" style="margin:0 25% 0 23%;padding:5px 5px 5px 5px;border: solid #337AB7  1px;opacity:0.9; background-color:#ffffff">
 				<h1>Applications</h1>
 				<div>
 				<table class="table table-hover table-striped">
@@ -267,31 +296,40 @@ left:250px;
 	  	
 	  	
 	  	 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="blpr">
-		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
-				<h1>Hello!!</h1>
-				<h2>it is find a billing page</h2><br/>
-				  <Label for= "app_name_bl" > Enter Application Name  </Label>
-			    <input type="text" ng-model="app_name_bl" name="app_name_bl" required>
-			    <br/>
-			    <input type="submit", ng-click="billing()">
+		   <div class="row col-md-6" style="margin:5% 25% 0 23%;padding:5px 5px 5px 5px;border: solid #337AB7  1px;opacity:0.9; background-color:#ffffff">	
+			  <h2 align= "center">Billing and Project Closure</h2>
+			   <h4 align= "center">
+			   <div class="form-group">
+			   <input type="text" ng-model="app_name_bl" name="app_name_bl" placeholder="Enter application name" class="form-control" style="width:50%" required >
+			   </div>
+			   <div class="form-group">
+			   <input type="submit" class="btn btn-default btn-primary"  value="Start Billing" ng-click="billing()">
+			   </div>
+			    </h4>
 			</div>
 		  
 	    </div>
 	    
 	    
 	    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="blcl">
-		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
+		   <div class="row col-md-6" style="margin:0 30% 0 23%;padding:5px 5px 5px 5px;border: solid #337AB7  1px;opacity:0.9; background-color:#ffffff">
 				<div ng-repeat="item in details">
-				<label>Enter points for {{item.first_name}} {{item.last_name}}:</label>
-				<input type="text" ng-model="item.points" />
-				</div>
+				<h2 align= "center">Enter Points for each tester</h2>
+				<br/>
+				<h5 align= "center">
+				<label>{{item.first_name}} {{item.last_name}} :</label>
+				<input type="text" ng-model="item.points" placeholder="Points"/>
+			    <br/>
+			    <br/>
 			    <br/>
 			    <input type="submit", ng-click="Billingclosure(details)">
+			    </h5>
+			    </div>
 			</div>	  
 	    </div>
 	    
 	    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  ng-show="bill">
-		    <div class="row" style="padding:5px 5px 5px 5px;border: solid #70D2EB  1px; opacity:0.8; background-color:#ffffff">
+		   <div class="row col-md-6" style="margin:0 25% 0 23%;padding:5px 5px 5px 5px;border: solid #337AB7  1px;opacity:0.9; background-color:#ffffff">
 				<h1>Project {{item.app_name}} is closed</h1>
 				<h2<Billing Information Below:</h2>
 				<div >
@@ -403,8 +441,8 @@ then(function(response)
 	
 	$scope.newProject = function (){
 	
-     alert("hello");
-	 alert($scope.email);					
+    // alert("hello");
+	// alert($scope.email);					
 	
 	  $http({
 	  	  		method: 'POST',
@@ -440,8 +478,8 @@ then(function(response)
 	
 	  $scope.findTester = function (){
     
-      alert($scope.email);
-      alert($scope.app_name_tr);
+     // alert($scope.email);
+      //alert($scope.app_name_tr);
   
       $http({
 	  	  		method: 'POST',
@@ -453,7 +491,7 @@ then(function(response)
 		    	//alert(response.data.status);
 			    	if (response.data.status === 200)
 		    	  		{	
-					    	alert(response.data.detail[0]);
+					    	//alert(response.data.detail[0]);
 						    
 						    $scope.home = false;
 							$scope.nwpr = false;
@@ -499,10 +537,10 @@ then(function(response)
 	
 	$scope.acceptTester = function (data) { 
 	
-	alert("coming in accept tester");
-    alert(data[0].first_name);
-    alert(data[0].selected);
-    alert(data[1].selected);
+	//alert("coming in accept tester");
+    //alert(data[0].first_name);
+    //alert(data[0].selected);
+    //alert(data[1].selected);
 	    
 	   $http({
 	  	  		method: 'POST',
@@ -514,6 +552,7 @@ then(function(response)
 			    	if (response.data.status == 200)
 		    	  		{	
 						    
+						    alert("Offer sent");
 						    $scope.home = true;
 							$scope.nwpr = false;
 							$scope.fntr = false;
@@ -534,7 +573,7 @@ then(function(response)
 	
 	$scope.runningProject = function (){
 	
-	alert("	In running project");
+	//alert("	In running project");
 	
 	
 	$http({		
@@ -569,8 +608,8 @@ then(function(response)
    
 $scope.billing = function (){
 
-	alert($scope.email);		
-	alert($scope.app_name_bl);
+	//alert($scope.email);		
+	//alert($scope.app_name_bl);
 	
 	$http({		
 	method: 'POST',			
@@ -604,9 +643,9 @@ $scope.billing = function (){
 
 $scope.Billingclosure = function (data){
 
-	alert(data[0].tr_email);
-	alert(data[0].project_id);
-	alert(data[0].points);
+	//alert(data[0].tr_email);
+	//alert(data[0].project_id);
+	//alert(data[0].points);
 
 		$http({
 		method: 'POST',
@@ -614,7 +653,7 @@ $scope.Billingclosure = function (data){
 		data: { "ad_email":$scope.email,"data":data}			
 			}).then(function(response)
 				{
-				alert(response.data.status);
+				//alert(response.data.status);
 				
 				if (response.data.status === 200)
 				
